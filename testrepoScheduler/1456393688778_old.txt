@@ -1,0 +1,25 @@
+
+
+
+
+ development mode --enabled true 
+
+
+
+buzzorproject --topLevelPackage com --isRuleEngine true --projectName testrepoScheduler --sourceCodeLocation /home/applifire/workspace/appConfigTemplate/appSourceCode/ --tomcatDeployLocation "" --tomcatAbsolutePath /Softwares/tomcat/webapps ---userName root --password root --schema jdbc:mysql://localhost:3306/information_schema --solrhome /home/applifire/workspace/customers/7E245865-93AE-4194-9B21-AD022F64A77F/user/2819A2AC-E9FF-425B-9519-9BC00CAB155B/LWGKDL6ZJPVSITHXCIB8VA/solr-4.9.0 --isSpringBatch true --isSearchEngine false
+
+entityManagerFactoryBean add property --name packagesToScan --value com.app,com.athena,com.spartan
+
+Persistent change persistentUnitName --name testrepoScheduler
+
+Persistent add property --name eclipselink.dialect --value org.eclipse.persistence.platform.database.MySQLPlatform
+
+Persistent add property --name javax.persistence.jdbc.url --value jdbc:mysql://localhost-MYSQL:3306/testrepo
+
+Persistent add property --name javax.persistence.jdbc.user --value testrepo
+
+Persistent add property --name javax.persistence.jdbc.password --value testrepo
+
+Persistent add property --name javax.persistence.jdbc.driver --value com.mysql.jdbc.Driver
+
+quit
