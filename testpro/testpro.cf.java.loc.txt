@@ -34,6 +34,7 @@
  27 src/main/java/com/app/server/repository/PasswordPolicyRepository.java
  27 src/main/java/com/app/server/repository/RetailerRepository.java
  27 src/main/java/com/app/server/repository/StateRepository.java
+ 27 src/main/java/com/app/server/repository/TestnnnnRepository.java
  27 src/main/java/com/app/server/repository/TestOOORepository.java
  28 src/main/java/com/app/server/repository/RolesRepository.java
  29 src/main/java/com/app/server/repository/CityRepository.java
@@ -64,6 +65,7 @@
  46 src/main/java/com/app/server/service/DistributorService.java
  46 src/main/java/com/app/server/service/MaterialService.java
  46 src/main/java/com/app/server/service/RetailerService.java
+ 46 src/main/java/com/app/server/service/TestnnnnService.java
  46 src/main/java/com/app/server/service/TestOOOService.java
  47 src/main/java/com/app/server/service/AddressTypeService.java
  47 src/main/java/com/app/server/service/AppMenusService.java
@@ -112,6 +114,7 @@
  134 src/main/java/com/app/server/repository/DistributorRepositoryImpl.java
  134 src/main/java/com/app/server/repository/MaterialRepositoryImpl.java
  134 src/main/java/com/app/server/repository/RetailerRepositoryImpl.java
+ 134 src/main/java/com/app/server/repository/TestnnnnRepositoryImpl.java
  134 src/main/java/com/app/server/repository/TestOOORepositoryImpl.java
  136 src/main/java/com/app/server/repository/RolesRepositoryImpl.java
  139 src/main/java/com/app/server/bean/ProjectBean.java
@@ -153,6 +156,7 @@
  164 src/main/java/com/app/server/service/DistributorServiceImpl.java
  164 src/main/java/com/app/server/service/MaterialServiceImpl.java
  164 src/main/java/com/app/server/service/RetailerServiceImpl.java
+ 164 src/main/java/com/app/server/service/TestnnnnServiceImpl.java
  164 src/main/java/com/app/server/service/TestOOOServiceImpl.java
  166 src/test/java/com/app/server/service/LanguageTestCase.java
  167 src/main/java/com/app/server/service/AddressTypeServiceImpl.java
@@ -201,6 +205,7 @@
  233 src/test/java/com/app/server/service/CityTestCase.java
  241 src/main/java/com/app/server/repository/LoginRepositoryImpl.java
  243 src/main/java/com/app/server/repository/AddressRepositoryImpl.java
+ 252 src/test/java/com/app/server/service/TestnnnnTestCase.java
  252 src/test/java/com/app/server/service/TestOOOTestCase.java
  262 src/main/java/com/app/shared/authentication/ArtPasswordPolicy.java
  264 src/main/java/com/app/shared/defaultdomain/NewEntity.java
@@ -218,6 +223,7 @@
  277 src/main/java/com/app/shared/sales/Retailer.java
  279 src/main/java/com/app/shared/contacts/CommunicationGroup.java
  281 src/main/java/com/app/shared/defaultdomain/TestOOO.java
+ 283 src/main/java/com/app/shared/defaultdomain/Testnnnn.java
  287 src/test/java/com/app/server/service/UserAccessTestCase.java
  289 src/main/java/com/app/shared/contacts/CommunicationData.java
  290 src/test/java/com/app/server/service/UserRoleBridgeTestCase.java
@@ -253,4 +259,4 @@
  487 src/test/java/com/app/server/service/LoginTestCase.java
  555 src/main/java/com/app/shared/authentication/User.java
  648 src/main/java/com/app/shared/contacts/CoreContacts.java
- 38978 total
+ 39884 total

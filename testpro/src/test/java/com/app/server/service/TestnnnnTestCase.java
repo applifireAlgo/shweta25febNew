@@ -7,8 +7,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 import org.springframework.test.context.TestExecutionListeners;
-import com.app.server.repository.TestOOORepository;
-import com.app.shared.defaultdomain.TestOOO;
+import com.app.server.repository.TestnnnnRepository;
+import com.app.shared.defaultdomain.Testnnnn;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.athena.framework.server.helper.RuntimeLogInfoHelper;
 import com.athena.framework.server.helper.EntityValidatorHelper;
@@ -38,10 +38,10 @@ import com.app.server.repository.StateRepository;
 @ContextConfiguration(classes = WebConfigExtended.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @TestExecutionListeners({ org.springframework.test.context.support.DependencyInjectionTestExecutionListener.class, org.springframework.test.context.support.DirtiesContextTestExecutionListener.class, org.springframework.test.context.transaction.TransactionalTestExecutionListener.class })
-public class TestOOOTestCase {
+public class TestnnnnTestCase {
 
     @Autowired
-    private TestOOORepository<TestOOO> testoooRepository;
+    private TestnnnnRepository<Testnnnn> testnnnnRepository;
 
     @Autowired
     private RuntimeLogInfoHelper runtimeLogInfoHelper;
@@ -107,82 +107,82 @@ public class TestOOOTestCase {
     public void test1Save() {
         try {
             Address address = new Address();
-            address.setAddress1("4q7ehWsf6DNvWN2DAGT2eolxn8KT3PNI8Tdtft2OimYeDzqmqb");
-            address.setAddress2("yViuS22Uo4X4CO78iUB8YEmDv0peFFzQwuhKaQ1e3cK6PBblkQ");
-            address.setAddress3("SScewSMav0iXNREhg3NwdmGlhbRV0qmDBdsFU2B2JFllSJA8n1");
-            address.setAddressLabel("OzowPpQJ0jz");
+            address.setAddress1("epelMmm8n4Cn4tw6j2AqIaBAx8XxvGAuMBeOgA3fbcW5TtpuMW");
+            address.setAddress2("yW9FopG75c9Pu2AN6KYK2YUg933BtcoTa0dmA2e3s6OJJcwN0A");
+            address.setAddress3("IarFMgi4HjnmyEm5yzCDSva4zvbcXLs58L39GnRoFKRpeNMefA");
+            address.setAddressLabel("pJsykOBwRuT");
             AddressType addresstype = new AddressType();
-            addresstype.setAddressType("vAfDc4liNurNVwXbM6JmiCDCkDlmE1EpHM4PzFIBAFSJbq62DT");
-            addresstype.setAddressTypeDesc("02s7PP6UZCjoSfxAanmwecM197pWXTfgKobWRBq7ezVYjL9M3t");
-            addresstype.setAddressTypeIcon("S8LgpHUR7OoO8CMuQFUCNobXoAykijWxQwocMPMxz9wnap2ZqU");
+            addresstype.setAddressType("raVMXYovdRC3tWR1vMM9zHz6IGPZA8yWnAkcLuEgJzs7njVhEE");
+            addresstype.setAddressTypeDesc("TszSw0oJV6y2lcaPDz2qrVmOdQuy3F2uRGGHYkJ4alSXRX2jqb");
+            addresstype.setAddressTypeIcon("vkn41nhirxfSv1eYDhIGiWZzLGqT3crRfv1Lmv7XXgh6gk8OCo");
             AddressType AddressTypeTest = addresstypeRepository.save(addresstype);
             map.put("AddressTypePrimaryKey", addresstype._getPrimarykey());
             City city = new City();
-            city.setCityCode(3);
-            city.setCityCodeChar2("0Q34ZFSYlb8LaZyplcL0o8nNnivI8owM");
-            city.setCityDescription("pZUUN9OCHYQr55Axk2wXxd5JMVzYChm1b1PkXyi5fta1QF3fxS");
-            city.setCityFlag("gE4MtfFbRPvofjohSq4DStBFcrxQ5vDxV9PorweyuQArZR9Qdo");
-            city.setCityLatitude(10);
-            city.setCityLongitude(7);
-            city.setCityName("F2gunGbJ5zqmOOfCZGpdaEIMvMHsgFWYkmXJQnPMmQU7h9ndN4");
+            city.setCityCode(2);
+            city.setCityCodeChar2("fuVAy9RJdDJb3251OIMzm8hMKVJC7LQ1");
+            city.setCityDescription("TxGYRsXgSxQo32KW8ttk49EFMcfk7AnksR6P3KQ9TcVW56SWdL");
+            city.setCityFlag("IBZw41FRsTiu9KiytYBdTu56KIpjJDY8OTUgUBkMCUTxNWm0uU");
+            city.setCityLatitude(2);
+            city.setCityLongitude(4);
+            city.setCityName("73J9kzN9s6M1H1nUMGEp0ZjlqhCAVhbWGBxn6aiKzJEMkiNf3c");
             Country country = new Country();
-            country.setCapital("VvPbQmGCFHUzNijNWLfSmYicUccfMExP");
-            country.setCapitalLatitude(11);
-            country.setCapitalLongitude(11);
-            country.setCountryCode1("qoM");
-            country.setCountryCode2("VSf");
-            country.setCountryFlag("JU63wMNUfQWf3vydruJUUuQUK5WYeyiGMHtxlgDwPyGcoeeBVi");
-            country.setCountryName("OQTH6f3jQBdBKRLVXeeeZAWgXo7CY2ee7IS1CQS4espX9KJ4Fx");
-            country.setCurrencyCode("z47");
-            country.setCurrencyName("eP6PC4FOcTprdwpD2zWw0SZ1IAlUKnjIH13RPdWuQo52UlUrlN");
-            country.setCurrencySymbol("awF7nyh8uJqFvCJAzo17jm5Y8pJghULW");
-            country.setIsoNumeric(9);
+            country.setCapital("FCt7WREzHSwKYIsRcj8GOCqBx7ntmeE2");
+            country.setCapitalLatitude(0);
+            country.setCapitalLongitude(2);
+            country.setCountryCode1("8BD");
+            country.setCountryCode2("2H9");
+            country.setCountryFlag("SvDxRbnu1UPC63hOSf5BmZw6Lh72pKUkFB7xqeo1rXpXkRDUFu");
+            country.setCountryName("fSJZmuSTvgqlasLClmM4iylixvu88dyV5Bcs4nlGYZn31hZF7c");
+            country.setCurrencyCode("mXA");
+            country.setCurrencyName("DrgoIJtcnP7sL4axDnSBbBDnncx1ADYyw40P9XaPSpgxNxDlep");
+            country.setCurrencySymbol("MlFwpTUeHzBU9Md3BOBulktWbMzaXkxL");
+            country.setIsoNumeric(11);
             Country CountryTest = countryRepository.save(country);
             map.put("CountryPrimaryKey", country._getPrimarykey());
             State state = new State();
             state.setCountryId((java.lang.String) CountryTest._getPrimarykey()); /* ******Adding refrenced table data */
-            state.setStateCapital("JSdtbtdmQbgKk3Ymr3L9qs5LmygEjoDcfdRaaVcQpZ643tZN1Z");
+            state.setStateCapital("YWYkcZdq27WwycpMyNcdO26zLtW4ej4BtRHej7Y8UQP5aLchbT");
             state.setStateCapitalLatitude(1);
-            state.setStateCapitalLongitude(7);
-            state.setStateCode(2);
-            state.setStateCodeChar2("n5i6Snl1MHzRll5z8zFGQ4TpAp0e9YXX");
-            state.setStateCodeChar3("6eBbplZhoIX1xwuVukVnbBxGj6Xlapd0");
-            state.setStateDescription("pT9bWjMsq0itUGgOXqgWDHR1AZDoIKby8fDYI1INZhKN7on7w4");
-            state.setStateFlag("5HQ0OaXk7tI0juZ8i0dZBgi6MtSmr6Qr0aAlIuEF7yGdVB51ib");
-            state.setStateName("zckF7ysF13CWL4aiZWJOKRx1yBF05HfCb8vtc2d5h0FnGNrRdv");
+            state.setStateCapitalLongitude(8);
+            state.setStateCode(0);
+            state.setStateCodeChar2("dI5nZrnuhqrJ7vO4Nznrni2ZPQ14SI9k");
+            state.setStateCodeChar3("NVYlRWOV8wogSbrRwyMZhoQCTFSLqTpt");
+            state.setStateDescription("xLZxOoiegY9MUpPrzV3l4CCLLjGGyJabDjHsGt4W0XsY7Zf7pj");
+            state.setStateFlag("IrXwEeigIgWNJUCCmsGTHAwmnQ7gwhYcmOswURMnPaThmNpX4Z");
+            state.setStateName("gIiujPoYFVz2sLQ9JgZ0UgzJjmkO26YHYuYUWWWxxOlrmyyxVs");
             State StateTest = stateRepository.save(state);
             map.put("StatePrimaryKey", state._getPrimarykey());
             city.setCityCode(1);
-            city.setCityCodeChar2("hhh69JexmV3zOW8IQg2KmePNFDjcZF87");
-            city.setCityDescription("2R1m9fT1GBeXrGgMGGvviixqDWAw9zv1CGegys1PNxnPfnPEpP");
-            city.setCityFlag("1BQSqr8XEKkhqcjpEozqtTPEsdjmOp6iW5IVzUkV0o0iETGFDy");
+            city.setCityCodeChar2("1Z3MXJIJZDBg4q0948Jt2x8IOwdtqLR3");
+            city.setCityDescription("VhvcX9E7vK0C1xIjtMtMFXW1ccwPIOH8Ff58td4xrZSqk0rO1H");
+            city.setCityFlag("2X7FyvfFkKtZYIblKFCWJ9ocQTnk3Rzn51csY8QWQqLoEAsvU7");
             city.setCityLatitude(2);
-            city.setCityLongitude(7);
-            city.setCityName("H9pz6FdkRzSnuHEZqdTUvZKMh1IFQjL6p7dhqn39a3IHNnctR9");
+            city.setCityLongitude(1);
+            city.setCityName("EVleEPz0O2LpijOkYlgwevHxYXWcU61KD5alNohQVFdHb59kYQ");
             city.setCountryId((java.lang.String) CountryTest._getPrimarykey()); /* ******Adding refrenced table data */
             city.setStateId((java.lang.String) StateTest._getPrimarykey()); /* ******Adding refrenced table data */
             City CityTest = cityRepository.save(city);
             map.put("CityPrimaryKey", city._getPrimarykey());
-            address.setAddress1("cK9dFVBWghnXvhyPJkrhXSyqeS4qCA92Eca7Psl0m7HDa7x0f3");
-            address.setAddress2("kK6F2jBrAs2Q4jKvUoooWIoocigNID7jBs8QCVcFHrOZ8l2bPE");
-            address.setAddress3("ErjisdGNZZRfooMtCzjhhSNCd7PPLLDwesMR131JE1NMuJxcyN");
-            address.setAddressLabel("zVw6xfjTMhf");
+            address.setAddress1("4wmd8IEupeHlkyRiyxoxGy4wVnHGdcmsORDyJZ0m9FEdFM0VTK");
+            address.setAddress2("QStUGlPrJ6Yr0vZUt69wVDFEnVnWjmwdMU1SrthSvaELS74FBb");
+            address.setAddress3("lcNGXHD3CGYxIp5vhT1brj2Ru8ryJJPFMXAbdEycuSZCL72NaO");
+            address.setAddressLabel("rXvTU1C5n4F");
             address.setAddressTypeId((java.lang.String) AddressTypeTest._getPrimarykey()); /* ******Adding refrenced table data */
             address.setCityId((java.lang.String) CityTest._getPrimarykey()); /* ******Adding refrenced table data */
             address.setCountryId((java.lang.String) CountryTest._getPrimarykey()); /* ******Adding refrenced table data */
-            address.setLatitude("bJQNE9VGxzxgKZ4rtkCh6MUt5HEOoZht9qjuYK8h5fGHlYoYEx");
-            address.setLongitude("EHY0dkyclSa6te9YDQzOVD9MehwnpPZaOgGjDAdN2ASMbeGake");
+            address.setLatitude("bKM87eAlyOohYjhXxuVQXwGqjAGc9Lo0KJCDdI7ilpJNdgRJmY");
+            address.setLongitude("7klPolTIYoYGoCsC2ohjW8aYOcmsCp3iJDuQPYK9gp7MZdqY3s");
             address.setStateId((java.lang.String) StateTest._getPrimarykey());
-            address.setZipcode("qLiR0w");
-            TestOOO testooo = new TestOOO();
-            testooo.setAddress(addressRepository.save(address));
+            address.setZipcode("FebN5e");
+            Testnnnn testnnnn = new Testnnnn();
+            testnnnn.setAddress(addressRepository.save(address));
             map.put("AddressPrimaryKey", address._getPrimarykey());
-            testooo.setDsds("Q7QuigQuV1Vrr81AhlRYwVJAHx7Duns7fjj6z2uWkNOIsgUzso");
-            testooo.setEntityAudit(1, "xyz", RECORD_TYPE.ADD);
-            testooo.setEntityValidator(entityValidator);
-            testooo.isValid();
-            testoooRepository.save(testooo);
-            map.put("TestOOOPrimaryKey", testooo._getPrimarykey());
+            testnnnn.setSfsf("HelloWorld");
+            testnnnn.setEntityAudit(1, "xyz", RECORD_TYPE.ADD);
+            testnnnn.setEntityValidator(entityValidator);
+            testnnnn.isValid();
+            testnnnnRepository.save(testnnnn);
+            map.put("TestnnnnPrimaryKey", testnnnn._getPrimarykey());
         } catch (com.athena.framework.server.exception.biz.SpartanConstraintViolationException e) {
             org.junit.Assert.fail(e.getMessage());
         } catch (java.lang.Exception e) {
@@ -208,12 +208,12 @@ public class TestOOOTestCase {
     @Test
     public void test2Update() {
         try {
-            org.junit.Assert.assertNotNull(map.get("TestOOOPrimaryKey"));
-            TestOOO testooo = testoooRepository.findById((java.lang.String) map.get("TestOOOPrimaryKey"));
-            testooo.setDsds("IS9zgz5tr2Li8cHZMLMNAeNTwXtSXRf9AIusEoq70LCxynAizz");
-            testooo.setVersionId(1);
-            testooo.setEntityAudit(1, "xyz", RECORD_TYPE.UPDATE);
-            testoooRepository.update(testooo);
+            org.junit.Assert.assertNotNull(map.get("TestnnnnPrimaryKey"));
+            Testnnnn testnnnn = testnnnnRepository.findById((java.lang.String) map.get("TestnnnnPrimaryKey"));
+            testnnnn.setSfsf("HelloWorld");
+            testnnnn.setVersionId(1);
+            testnnnn.setEntityAudit(1, "xyz", RECORD_TYPE.UPDATE);
+            testnnnnRepository.update(testnnnn);
         } catch (com.athena.framework.server.exception.repository.SpartanPersistenceException e) {
             org.junit.Assert.fail(e.getMessage());
         } catch (java.lang.Exception e) {
@@ -224,8 +224,8 @@ public class TestOOOTestCase {
     @Test
     public void test3FindById() {
         try {
-            org.junit.Assert.assertNotNull(map.get("TestOOOPrimaryKey"));
-            testoooRepository.findById((java.lang.String) map.get("TestOOOPrimaryKey"));
+            org.junit.Assert.assertNotNull(map.get("TestnnnnPrimaryKey"));
+            testnnnnRepository.findById((java.lang.String) map.get("TestnnnnPrimaryKey"));
         } catch (com.athena.framework.server.exception.repository.SpartanPersistenceException e) {
             org.junit.Assert.fail(e.getMessage());
         } catch (Exception e) {
@@ -236,8 +236,8 @@ public class TestOOOTestCase {
     @Test
     public void test4Delete() {
         try {
-            org.junit.Assert.assertNotNull(map.get("TestOOOPrimaryKey"));
-            testoooRepository.delete((java.lang.String) map.get("TestOOOPrimaryKey")); /* Deleting refrenced data */
+            org.junit.Assert.assertNotNull(map.get("TestnnnnPrimaryKey"));
+            testnnnnRepository.delete((java.lang.String) map.get("TestnnnnPrimaryKey")); /* Deleting refrenced data */
             addressRepository.delete((java.lang.String) map.get("AddressPrimaryKey")); /* Deleting refrenced data */
             cityRepository.delete((java.lang.String) map.get("CityPrimaryKey")); /* Deleting refrenced data */
             stateRepository.delete((java.lang.String) map.get("StatePrimaryKey")); /* Deleting refrenced data */
