@@ -1,6 +1,2 @@
-Address=1
-Address=0
-NewEntity=1
-NewEntity=0
-TestOOO=1
-TestOOO=0
+TestLLL=1
+TestLLL=0

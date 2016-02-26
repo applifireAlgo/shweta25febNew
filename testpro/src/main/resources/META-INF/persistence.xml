@@ -67,6 +67,7 @@
     <class>com.app.shared.location.Address</class>
     <class>com.app.shared.defaultdomain.NewEntity</class>
     <class>com.app.shared.defaultdomain.TestOOO</class>
+    <class>com.app.shared.defaultdomain.TestLLL</class>
     </persistence-unit>
 
 </persistence>

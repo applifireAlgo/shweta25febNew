@@ -21,6 +21,7 @@
  25 src/main/java/com/app/server/repository/NewEntityRepository.java
  25 src/main/java/com/app/server/repository/QuestionRepository.java
  25 src/main/java/com/app/server/repository/SalesRegionRepository.java
+ 25 src/main/java/com/app/server/repository/TestLLLRepository.java
  25 src/main/java/com/app/server/repository/TimezoneRepository.java
  25 src/main/java/com/app/server/repository/TitleRepository.java
  25 src/main/java/com/app/server/repository/UserAccessDomainRepository.java
@@ -52,6 +53,7 @@
  42 src/main/java/com/app/server/service/QuestionService.java
  42 src/main/java/com/app/server/service/RolesService.java
  42 src/main/java/com/app/server/service/SalesRegionService.java
+ 42 src/main/java/com/app/server/service/TestLLLService.java
  42 src/main/java/com/app/server/service/TitleService.java
  42 src/main/java/com/app/server/service/UserAccessDomainService.java
  42 src/main/java/com/app/server/service/UserAccessLevelService.java
@@ -104,6 +106,7 @@
  121 src/main/java/com/app/server/repository/CurrentMonthRepositoryImpl.java
  121 src/main/java/com/app/server/repository/NewEntityRepositoryImpl.java
  121 src/main/java/com/app/server/repository/SalesRegionRepositoryImpl.java
+ 121 src/main/java/com/app/server/repository/TestLLLRepositoryImpl.java
  132 src/main/java/com/app/server/repository/SessionDataRepositoryImpl.java
  134 src/main/java/com/app/server/repository/BrandRepositoryImpl.java
  134 src/main/java/com/app/server/repository/DistributorRepositoryImpl.java
@@ -123,6 +126,7 @@
  148 src/main/java/com/app/server/service/NewEntityServiceImpl.java
  148 src/main/java/com/app/server/service/QuestionServiceImpl.java
  148 src/main/java/com/app/server/service/SalesRegionServiceImpl.java
+ 148 src/main/java/com/app/server/service/TestLLLServiceImpl.java
  148 src/main/java/com/app/server/service/TitleServiceImpl.java
  148 src/main/java/com/app/server/service/UserAccessDomainServiceImpl.java
  148 src/main/java/com/app/server/service/UserAccessLevelServiceImpl.java
@@ -134,6 +138,7 @@
  152 src/test/java/com/app/server/service/GenderTestCase.java
  152 src/test/java/com/app/server/service/NewEntityTestCase.java
  152 src/test/java/com/app/server/service/SalesRegionTestCase.java
+ 152 src/test/java/com/app/server/service/TestLLLTestCase.java
  152 src/test/java/com/app/server/service/TitleTestCase.java
  153 src/main/java/com/app/server/service/ArtPasswordPolicyServiceImpl.java
  154 src/test/java/com/app/server/service/CommunicationGroupTestCase.java
@@ -199,6 +204,7 @@
  252 src/test/java/com/app/server/service/TestOOOTestCase.java
  262 src/main/java/com/app/shared/authentication/ArtPasswordPolicy.java
  264 src/main/java/com/app/shared/defaultdomain/NewEntity.java
+ 264 src/main/java/com/app/shared/defaultdomain/TestLLL.java
  264 src/main/java/com/app/shared/sales/SalesRegion.java
  265 src/main/java/com/app/shared/sales/Category.java
  265 src/main/java/com/app/shared/sales/Channel.java
@@ -247,4 +253,4 @@
  487 src/test/java/com/app/server/service/LoginTestCase.java
  555 src/main/java/com/app/shared/authentication/User.java
  648 src/main/java/com/app/shared/contacts/CoreContacts.java
- 38226 total
+ 38978 total
