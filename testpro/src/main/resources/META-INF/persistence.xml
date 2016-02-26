@@ -64,6 +64,9 @@
     <class>com.app.shared.sales.SalesData</class>
     <class>com.app.shared.sales.CurrentMonth</class>
     <class>com.app.shared.sales.UserAccess</class>
+    <class>com.app.shared.location.Address</class>
+    <class>com.app.shared.defaultdomain.NewEntity</class>
+    <class>com.app.shared.defaultdomain.TestOOO</class>
     </persistence-unit>
 
 </persistence>

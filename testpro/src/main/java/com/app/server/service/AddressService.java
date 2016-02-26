@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import com.athena.framework.server.bean.FindByBean;
 
-@SourceCodeAuthorClass(createdBy = "nayan.chaudhari@algorhythm.co.in", updatedBy = "", versionNumber = "1", comments = "Service for Address Transaction table", complexity = Complexity.MEDIUM)
+@SourceCodeAuthorClass(createdBy = "nayan.chaudhari@algorhythm.co.in", updatedBy = "nayan.chaudhari@algorhythm.co.in", versionNumber = "2", comments = "Service for Address Transaction table", complexity = Complexity.MEDIUM)
 public abstract class AddressService {
 
     public HttpEntity<ResponseBean> findAll() throws Exception, SpartanPersistenceException {

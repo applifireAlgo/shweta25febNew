@@ -1,4 +1,4 @@
-package com.app.shared.location;
+package com.app.shared.defaultdomain;
 import com.athena.annotation.Complexity;
 import com.athena.annotation.SourceCodeAuthorClass;
 import com.athena.framework.shared.entity.web.entityInterface.CommonEntityInterface;
@@ -8,11 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
-import org.eclipse.persistence.config.CacheIsolationType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Column;
-import javax.validation.constraints.Size;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.persistence.Transient;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -27,74 +26,27 @@ import com.athena.framework.server.exception.biz.SpartanIncorrectDataException;
 import java.lang.Override;
 import javax.persistence.NamedQueries;
 
-@Table(name = "ast_Address_T")
+@Table(name = "ast_NewEntity_M")
 @Entity
-@Cache(type = CacheType.CACHE, isolation = CacheIsolationType.ISOLATED)
-@SourceCodeAuthorClass(createdBy = "nayan.chaudhari@algorhythm.co.in", updatedBy = "nayan.chaudhari@algorhythm.co.in", versionNumber = "2", comments = "Address", complexity = Complexity.LOW)
-@NamedQueries({ @javax.persistence.NamedQuery(name = "Address.DefaultFinders", query = "select e from Address e where e.systemInfo.activeStatus=1 and e.addressTypeId LIKE :addressTypeId"), @javax.persistence.NamedQuery(name = "Address.findByAddressTypeId", query = "select e from Address e where e.systemInfo.activeStatus=1 and e.addressTypeId=:addressTypeId"), @javax.persistence.NamedQuery(name = "Address.findByCountryId", query = "select e from Address e where e.systemInfo.activeStatus=1 and e.countryId=:countryId"), @javax.persistence.NamedQuery(name = "Address.findByStateId", query = "select e from Address e where e.systemInfo.activeStatus=1 and e.stateId=:stateId"), @javax.persistence.NamedQuery(name = "Address.findByCityId", query = "select e from Address e where e.systemInfo.activeStatus=1 and e.cityId=:cityId"), @javax.persistence.NamedQuery(name = "Address.findById", query = "select e from Address e where e.systemInfo.activeStatus=1 and e.addressId =:addressId") })
-public class Address implements Serializable, CommonEntityInterface, Comparator<Address> {
+@Cache(type = CacheType.CACHE)
+@SourceCodeAuthorClass(createdBy = "nayan.chaudhari@algorhythm.co.in", updatedBy = "", versionNumber = "1", comments = "NewEntity", complexity = Complexity.LOW)
+@NamedQueries({ @javax.persistence.NamedQuery(name = "NewEntity.findById", query = "select e from NewEntity e where e.systemInfo.activeStatus=1 and e.ss =:ss") })
+public class NewEntity implements Serializable, CommonEntityInterface, Comparator<NewEntity> {
 
-    @Column(name = "addressLabel")
-    @JsonProperty("addressLabel")
-    @Size(min = 0, max = 11)
-    private String addressLabel;
-
-    @Column(name = "address1")
-    @JsonProperty("address1")
-    @Size(min = 0, max = 56)
-    private String address1;
-
-    @Column(name = "address2")
-    @JsonProperty("address2")
-    @Size(min = 0, max = 56)
-    private String address2;
-
-    @Column(name = "address3")
-    @JsonProperty("address3")
-    @Size(min = 0, max = 56)
-    private String address3;
-
-    @Column(name = "zipcode")
-    @JsonProperty("zipcode")
+    @Column(name = "sss")
+    @JsonProperty("sss")
     @NotNull
-    @Size(min = 0, max = 6)
-    private String zipcode;
-
-    @Column(name = "latitude")
-    @JsonProperty("latitude")
-    @Size(min = 0, max = 64)
-    private String latitude;
-
-    @Column(name = "longitude")
-    @JsonProperty("longitude")
-    @Size(min = 0, max = 64)
-    private String longitude;
+    @Size(min = 0, max = 256)
+    private String sss;
 
     @Transient
     private String primaryKey;
 
     @Id
-    @Column(name = "addressId")
-    @JsonProperty("addressId")
+    @Column(name = "ss")
+    @JsonProperty("ss")
     @GeneratedValue(generator = "UUIDGenerator")
-    @Size(min = 0, max = 64)
-    private String addressId;
-
-    @Column(name = "addressTypeId")
-    @JsonProperty("addressTypeId")
-    private String addressTypeId;
-
-    @Column(name = "countryId")
-    @JsonProperty("countryId")
-    private String countryId;
-
-    @Column(name = "stateId")
-    @JsonProperty("stateId")
-    private String stateId;
-
-    @Column(name = "cityId")
-    @JsonProperty("cityId")
-    private String cityId;
+    private String ss;
 
     @Transient
     @JsonIgnore
@@ -115,66 +67,18 @@ public class Address implements Serializable, CommonEntityInterface, Comparator<
     @Transient
     private String primaryDisplay;
 
-    public String getAddressLabel() {
-        return addressLabel;
+    public String getSss() {
+        return sss;
     }
 
-    public void setAddressLabel(String _addressLabel) {
-        this.addressLabel = _addressLabel;
-    }
-
-    public String getAddress1() {
-        return address1;
-    }
-
-    public void setAddress1(String _address1) {
-        this.address1 = _address1;
-    }
-
-    public String getAddress2() {
-        return address2;
-    }
-
-    public void setAddress2(String _address2) {
-        this.address2 = _address2;
-    }
-
-    public String getAddress3() {
-        return address3;
-    }
-
-    public void setAddress3(String _address3) {
-        this.address3 = _address3;
-    }
-
-    public String getZipcode() {
-        return zipcode;
-    }
-
-    public void setZipcode(String _zipcode) {
-        if (_zipcode != null) {
-            this.zipcode = _zipcode;
+    public void setSss(String _sss) {
+        if (_sss != null) {
+            this.sss = _sss;
         }
     }
 
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(String _latitude) {
-        this.latitude = _latitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(String _longitude) {
-        this.longitude = _longitude;
-    }
-
     public String getPrimaryKey() {
-        return addressId;
+        return ss;
     }
 
     public void setPrimaryKey(String _primaryKey) {
@@ -182,47 +86,15 @@ public class Address implements Serializable, CommonEntityInterface, Comparator<
     }
 
     public String _getPrimarykey() {
-        return addressId;
+        return ss;
     }
 
-    public String getAddressId() {
-        return addressId;
+    public String getSs() {
+        return ss;
     }
 
-    public void setAddressId(String _addressId) {
-        this.addressId = _addressId;
-    }
-
-    public String getAddressTypeId() {
-        return addressTypeId;
-    }
-
-    public void setAddressTypeId(String _addressTypeId) {
-        this.addressTypeId = _addressTypeId;
-    }
-
-    public String getCountryId() {
-        return countryId;
-    }
-
-    public void setCountryId(String _countryId) {
-        this.countryId = _countryId;
-    }
-
-    public String getStateId() {
-        return stateId;
-    }
-
-    public void setStateId(String _stateId) {
-        this.stateId = _stateId;
-    }
-
-    public String getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(String _cityId) {
-        this.cityId = _cityId;
+    public void setSs(String _ss) {
+        this.ss = _ss;
     }
 
     public int getVersionId() {
@@ -348,14 +220,14 @@ public class Address implements Serializable, CommonEntityInterface, Comparator<
     }
 
     @Override
-    public int compare(Address object1, Address object2) {
+    public int compare(NewEntity object1, NewEntity object2) {
         return 0;
     }
 
     public String getPrimaryDisplay() {
         StringBuilder sb = new StringBuilder();
         sb.append("");
-        sb.append((zipcode == null ? " " : zipcode));
+        sb.append((sss == null ? " " : sss));
         return sb.toString();
     }
 
@@ -364,19 +236,19 @@ public class Address implements Serializable, CommonEntityInterface, Comparator<
     }
 
     public int hashCode() {
-        if (addressId == null) {
+        if (ss == null) {
             return super.hashCode();
         } else {
-            return addressId.hashCode();
+            return ss.hashCode();
         }
     }
 
     public boolean equals(Object obj) {
         try {
-            com.app.shared.location.Address other = (com.app.shared.location.Address) obj;
-            if (addressId == null) {
+            com.app.shared.defaultdomain.NewEntity other = (com.app.shared.defaultdomain.NewEntity) obj;
+            if (ss == null) {
                 return false;
-            } else if (!addressId.equals(other.addressId)) {
+            } else if (!ss.equals(other.ss)) {
                 return false;
             }
         } catch (java.lang.Exception ignore) {

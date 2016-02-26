@@ -18,7 +18,7 @@ import java.util.Map;
 
 @Repository
 @Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
-@SourceCodeAuthorClass(createdBy = "nayan.chaudhari@algorhythm.co.in", updatedBy = "", versionNumber = "1", comments = "Repository for Address Transaction table", complexity = Complexity.MEDIUM)
+@SourceCodeAuthorClass(createdBy = "nayan.chaudhari@algorhythm.co.in", updatedBy = "nayan.chaudhari@algorhythm.co.in", versionNumber = "2", comments = "Repository for Address Transaction table", complexity = Complexity.MEDIUM)
 public class AddressRepositoryImpl extends SearchInterfaceImpl implements AddressRepository<Address> {
 
     @Autowired

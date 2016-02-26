@@ -7,8 +7,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 import org.springframework.test.context.TestExecutionListeners;
-import com.app.server.repository.AddressRepository;
-import com.app.shared.location.Address;
+import com.app.server.repository.TestOOORepository;
+import com.app.shared.defaultdomain.TestOOO;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.athena.framework.server.helper.RuntimeLogInfoHelper;
 import com.athena.framework.server.helper.EntityValidatorHelper;
@@ -22,6 +22,8 @@ import org.junit.Before;
 import org.junit.After;
 import com.athena.framework.shared.entity.web.entityInterface.CommonEntityInterface.RECORD_TYPE;
 import org.junit.Test;
+import com.app.shared.location.Address;
+import com.app.server.repository.AddressRepository;
 import com.app.shared.location.AddressType;
 import com.app.server.repository.AddressTypeRepository;
 import com.app.shared.location.City;
@@ -36,10 +38,10 @@ import com.app.server.repository.StateRepository;
 @ContextConfiguration(classes = WebConfigExtended.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @TestExecutionListeners({ org.springframework.test.context.support.DependencyInjectionTestExecutionListener.class, org.springframework.test.context.support.DirtiesContextTestExecutionListener.class, org.springframework.test.context.transaction.TransactionalTestExecutionListener.class })
-public class AddressTestCase {
+public class TestOOOTestCase {
 
     @Autowired
-    private AddressRepository<Address> addressRepository;
+    private TestOOORepository<TestOOO> testoooRepository;
 
     @Autowired
     private RuntimeLogInfoHelper runtimeLogInfoHelper;
@@ -104,81 +106,92 @@ public class AddressTestCase {
     @Test
     public void test1Save() {
         try {
+            Address address = new Address();
+            address.setAddress1("cbksdilTx6awY7bI3iiBHmC6M9o2tZeucaanE1u15ssqGJ5KMe");
+            address.setAddress2("IcskTTuTB86Ljfpp2244IEipE1rPDyMWPiFqDb07fgylfhS391");
+            address.setAddress3("EjgfaENoi8Oh9oHxdSmT8orAy9KHrnAXmg57i3W8YKcC5CT7B6");
+            address.setAddressLabel("XUUTuogFTA9");
             AddressType addresstype = new AddressType();
-            addresstype.setAddressType("FiZpkQoJJuZIYgDRDbk06OovFJbA38M7Db1EwKyVk4TvWylLZx");
-            addresstype.setAddressTypeDesc("dQyTwKs1mhpJdRNtIb8UnJ487riDO3WVb0ChzzLGjPG7pSMQGS");
-            addresstype.setAddressTypeIcon("FFJ42qtBZ9mJqyjVAOSY53YwazsKERqfkkhMqNmAhZ3flqmrRp");
+            addresstype.setAddressType("hPSz8cXbGMIJsgDfzkOTHNBRPIISe1Qqoc5NkkyRbyh7WqaLUq");
+            addresstype.setAddressTypeDesc("4n0mU2wmuHwAvzlrHZITFlhFmXSkVOqvjYum9ErXZDjM70TJlz");
+            addresstype.setAddressTypeIcon("Yw6pzXMvMVhZsdM7N4FaFoptiaNItSQpog9wBe9TYwkZhwamNz");
             AddressType AddressTypeTest = addresstypeRepository.save(addresstype);
             map.put("AddressTypePrimaryKey", addresstype._getPrimarykey());
             City city = new City();
-            city.setCityCode(2);
-            city.setCityCodeChar2("SdMs8blwnfDaR6dyfdYOFyNJAFX8Eg5P");
-            city.setCityDescription("dzKLPTCECSSQKdpFhn292GoKNPBBo7rbJNwaycRrflRNw8t31y");
-            city.setCityFlag("Yo6U87KwHZzPiza9Oj02u8eMiK1ydxAcrhFpMx9w1ZkAeqYjgG");
-            city.setCityLatitude(1);
-            city.setCityLongitude(7);
-            city.setCityName("iGvy7t4Tuq6ROUU4MW3zK5GiWL8gCVWvSpVOVYv0SCtvysFTHl");
+            city.setCityCode(1);
+            city.setCityCodeChar2("biXIrkRrVR74244GEFEgRaUd1wmYtQOu");
+            city.setCityDescription("jDW7q2HOSGOfb76yLYaKxuFv2nclIGgmROMaygX6HO3gyJiRlK");
+            city.setCityFlag("6KZz7FiRSijdqH15KABv3CWHR1wgo4gIj4uGd2RrCz09HWHPWV");
+            city.setCityLatitude(3);
+            city.setCityLongitude(0);
+            city.setCityName("kf2ImkdbH2dRTcKiAZFDZwLTQeVU1LBxNiUnVSE3ldporpcCZS");
             Country country = new Country();
-            country.setCapital("B3fnrtBYP4WXy6TYthoFwJHFFGF9awkP");
-            country.setCapitalLatitude(4);
-            country.setCapitalLongitude(6);
-            country.setCountryCode1("Xjl");
-            country.setCountryCode2("J2b");
-            country.setCountryFlag("HJLnKtfFH4ZNR3l79mth0L2LudCYLwJR4jLArxAckBv9rcNOAE");
-            country.setCountryName("n0EpYeAc7anlFXk0eU8yCxRutXelkYY3OfegR5mjQUBFK5yOJo");
-            country.setCurrencyCode("lEt");
-            country.setCurrencyName("IkVXwI69XcxVZ1vxocyjpm2BNRFheZ2Cqh72dFKsN3E6BZRdoH");
-            country.setCurrencySymbol("qEllih6SFDRTkj37g4B9NFq3eGtRHYav");
-            country.setIsoNumeric(7);
+            country.setCapital("XB9YCCzTPe7hUnoYrhyaZnx3wMJ1sXXs");
+            country.setCapitalLatitude(11);
+            country.setCapitalLongitude(10);
+            country.setCountryCode1("Ewp");
+            country.setCountryCode2("FdO");
+            country.setCountryFlag("Twd2vAbLTvzdjfm20lBENbWQj7mnJYbtDJepowfkW3ApZEdZqm");
+            country.setCountryName("C4gKs22ebagLuJJGZH8s0WmR85zjwMAhyGkVkgkOmnGY1H6xSC");
+            country.setCurrencyCode("rxR");
+            country.setCurrencyName("1qXfDtABqJr4aCYLWGsRXxS570AxBLVzWxbGYjXPEQqfhWtUn2");
+            country.setCurrencySymbol("fkeUXIQ6AISgnfPApUFc65TkZw5ZBQYp");
+            country.setIsoNumeric(9);
             Country CountryTest = countryRepository.save(country);
             map.put("CountryPrimaryKey", country._getPrimarykey());
             State state = new State();
             state.setCountryId((java.lang.String) CountryTest._getPrimarykey()); /* ******Adding refrenced table data */
-            state.setStateCapital("3vKyabNXmxNNNBFUxwTbGVTDhKwcd120UTlAgCsuCGkq4pHfwL");
-            state.setStateCapitalLatitude(1);
-            state.setStateCapitalLongitude(9);
-            state.setStateCode(2);
-            state.setStateCodeChar2("nc0wZI5V6Am1a6wIj8cE0Jjk8noTCwfv");
-            state.setStateCodeChar3("4u0NpRmmLSw0pQrTQJnClOprXfQy2xkR");
-            state.setStateDescription("6cdPfkCvzbQmVETLYTPiveIxluldlAtTSQIAApB9ur2IWQ8XQd");
-            state.setStateFlag("dExqA6gfweGzy1htY8CurfW39rzVcMdAt19ol1a10BTZzol2o0");
-            state.setStateName("Z8GsCQ9Kj3jYx68BCGvCZQUUSGgpXAHeUx7hz5HDyZBotgMBXM");
+            state.setStateCapital("EwWUWl5sxoLc696b7rO6E3O4YgEt0SBMRvAtqbD4n8xIjpfxWQ");
+            state.setStateCapitalLatitude(7);
+            state.setStateCapitalLongitude(0);
+            state.setStateCode(0);
+            state.setStateCodeChar2("Ma7ypnxEDrPGBQl8azwclZ6UqEzOW64r");
+            state.setStateCodeChar3("GouUQ7254zKA1WwrqoDLfK8hadJxrxpA");
+            state.setStateDescription("hkowiXzoJmuAxpSi5BJS0OadeUVomcNwHSUxznPpdj8ZskSWLA");
+            state.setStateFlag("9dZ2fAtnkZPYjRsfXPByAhuo4YncKmcAcmMr7RUW31wxTwKvHI");
+            state.setStateName("c6lceW5cOMz6D9jjX0ykUfNF5WRvyth9nmFuM4SZirYCc4DMRV");
             State StateTest = stateRepository.save(state);
             map.put("StatePrimaryKey", state._getPrimarykey());
-            city.setCityCode(3);
-            city.setCityCodeChar2("zkWiwUDjzeekN27gXcmnPz4qQqnAMowI");
-            city.setCityDescription("RZDPLfaEaZ414DnxmbaZc2lCbiM9x2GKaVDAuJcmrzwYI9U4Kp");
-            city.setCityFlag("NuH7jcXMifUIh2LB0Cbc8sFqj0hPg8SrzoqGPei4vg02weR8wO");
-            city.setCityLatitude(1);
-            city.setCityLongitude(4);
-            city.setCityName("8gdjXDPJ0vhWX1oS7X0786esgPd56nUAkXFJxc1zcIcs1kkwxW");
+            city.setCityCode(0);
+            city.setCityCodeChar2("YIgYdhqt5KGTwpFcmGLXBao3h8yc2gEb");
+            city.setCityDescription("QsrT7eUaIlCSwrjNmhQ8HnDZNXb7rHS9HsICHaGJmAmffOe2HR");
+            city.setCityFlag("8GpkVq0It5EtfAf7XUUeh4g2jhUsPmruBb6AM9muOZKGV4ac4s");
+            city.setCityLatitude(11);
+            city.setCityLongitude(1);
+            city.setCityName("MQZNcPfmStttwJoKxdepS1gcaUj6aMknqFu3U0VDKv0ocqYA71");
             city.setCountryId((java.lang.String) CountryTest._getPrimarykey()); /* ******Adding refrenced table data */
             city.setStateId((java.lang.String) StateTest._getPrimarykey()); /* ******Adding refrenced table data */
             City CityTest = cityRepository.save(city);
             map.put("CityPrimaryKey", city._getPrimarykey());
-            Address address = new Address();
-            address.setAddress1("Fp9EYmSWbEstTe8tx3bJBeDEEwHMLeUjv0wF5q59sCVLea4OvY");
-            address.setAddress2("btnotZSWwAO3mjjwglP9Iy8H39MRDR6LZYbMnqE3wlNHsfrDVi");
-            address.setAddress3("uQXPpScRAJCASE1bbuFwuPtNtKjxD9Jbd79f1LXEw5ywXjTLp9");
-            address.setAddressLabel("NBaglc3xLir");
+            address.setAddress1("dMXyA3kiUOFrTapNC740JGrQWaUuMofuWUNFrPjWq0MZO0Lyoo");
+            address.setAddress2("88DknFD6rMYJ5cDLsIRjLUVv1Pb0NRa0SifhQCfYHJf2OplIpX");
+            address.setAddress3("GDTuF86XGY20kWIBz27F8kquuEF8IZMyn0U4cOdkUGxBIGwijK");
+            address.setAddressLabel("zgAvL5RwL2K");
             address.setAddressTypeId((java.lang.String) AddressTypeTest._getPrimarykey()); /* ******Adding refrenced table data */
             address.setCityId((java.lang.String) CityTest._getPrimarykey()); /* ******Adding refrenced table data */
             address.setCountryId((java.lang.String) CountryTest._getPrimarykey()); /* ******Adding refrenced table data */
-            address.setLatitude("VyyPRl0drGPO2kUD6Afr3JiVR3O9mMxadQjnWta8mKJcik5pSQ");
-            address.setLongitude("uAm4z7YtAhbwVTYx1AFEIdnUbkJaBV284w5EsB83IRUzULF4dV");
+            address.setLatitude("qwkZ9bwBVii2KBJZZ2YuQXCcyNntOyyWC7bRZyG31so6jsBCPc");
+            address.setLongitude("iuGVF3uvh2dIssAvkW2jdnR1DdbfvVVhsi5yRrULQV9gfTJJz9");
             address.setStateId((java.lang.String) StateTest._getPrimarykey());
-            address.setZipcode("Nw6DFl");
-            address.setEntityAudit(1, "xyz", RECORD_TYPE.ADD);
-            address.setEntityValidator(entityValidator);
-            address.isValid();
-            addressRepository.save(address);
+            address.setZipcode("j8doHM");
+            TestOOO testooo = new TestOOO();
+            testooo.setAddress(addressRepository.save(address));
             map.put("AddressPrimaryKey", address._getPrimarykey());
+            testooo.setDsds("ZtmhiOUQ3QJ1MQXdaGH0GsriEEBHhzak2ibsLGDjHvFWzvTx3L");
+            testooo.setEntityAudit(1, "xyz", RECORD_TYPE.ADD);
+            testooo.setEntityValidator(entityValidator);
+            testooo.isValid();
+            testoooRepository.save(testooo);
+            map.put("TestOOOPrimaryKey", testooo._getPrimarykey());
         } catch (com.athena.framework.server.exception.biz.SpartanConstraintViolationException e) {
             org.junit.Assert.fail(e.getMessage());
         } catch (java.lang.Exception e) {
             org.junit.Assert.fail(e.getMessage());
         }
     }
+
+    @Autowired
+    private AddressRepository<Address> addressRepository;
 
     @Autowired
     private AddressTypeRepository<AddressType> addresstypeRepository;
@@ -195,18 +208,12 @@ public class AddressTestCase {
     @Test
     public void test2Update() {
         try {
-            org.junit.Assert.assertNotNull(map.get("AddressPrimaryKey"));
-            Address address = addressRepository.findById((java.lang.String) map.get("AddressPrimaryKey"));
-            address.setAddress1("DdGcD9YhdaHfih2LO2Cy0MG1ZXuPjyk63L9CzsRSxBf9dMKwuA");
-            address.setAddress2("G7vzuphwbULCPGYqHZMywgvYoGFx5KCAtMZAEtIJEdXRmR9C0b");
-            address.setAddress3("Mbf3TanjJmNZaDeNSzCHp9kgByWSCGvcLGMUqbNGuk5sOSa00l");
-            address.setAddressLabel("OIQUmtf1nox");
-            address.setLatitude("lxxepJ6Pc1FgedjfLtT3lAsqLFQqkd8go1pBowhqB7ltx9N6DI");
-            address.setLongitude("ZqCcK8FA3beWhr5quRtnHOXcWHr7qXNrOFG2oQIgOyjbBu5JHh");
-            address.setVersionId(1);
-            address.setZipcode("ZwDPhQ");
-            address.setEntityAudit(1, "xyz", RECORD_TYPE.UPDATE);
-            addressRepository.update(address);
+            org.junit.Assert.assertNotNull(map.get("TestOOOPrimaryKey"));
+            TestOOO testooo = testoooRepository.findById((java.lang.String) map.get("TestOOOPrimaryKey"));
+            testooo.setDsds("2eOrwo7RjbsNmTRCB0QoVGkE7pcYsiGOQ0WDNV8uNxMFZTMtJ4");
+            testooo.setVersionId(1);
+            testooo.setEntityAudit(1, "xyz", RECORD_TYPE.UPDATE);
+            testoooRepository.update(testooo);
         } catch (com.athena.framework.server.exception.repository.SpartanPersistenceException e) {
             org.junit.Assert.fail(e.getMessage());
         } catch (java.lang.Exception e) {
@@ -217,64 +224,8 @@ public class AddressTestCase {
     @Test
     public void test3FindById() {
         try {
-            org.junit.Assert.assertNotNull(map.get("AddressPrimaryKey"));
-            addressRepository.findById((java.lang.String) map.get("AddressPrimaryKey"));
-        } catch (com.athena.framework.server.exception.repository.SpartanPersistenceException e) {
-            org.junit.Assert.fail(e.getMessage());
-        } catch (Exception e) {
-            org.junit.Assert.fail(e.getMessage());
-        }
-    }
-
-    @Test
-    public void test3findByaddressTypeId() {
-        try {
-            java.util.List<Address> listofaddressTypeId = addressRepository.findByAddressTypeId((java.lang.String) map.get("AddressTypePrimaryKey"));
-            if (listofaddressTypeId.size() == 0) {
-                org.junit.Assert.fail("Query did not return any records.");
-            }
-        } catch (com.athena.framework.server.exception.repository.SpartanPersistenceException e) {
-            org.junit.Assert.fail(e.getMessage());
-        } catch (Exception e) {
-            org.junit.Assert.fail(e.getMessage());
-        }
-    }
-
-    @Test
-    public void test3findBycityId() {
-        try {
-            java.util.List<Address> listofcityId = addressRepository.findByCityId((java.lang.String) map.get("CityPrimaryKey"));
-            if (listofcityId.size() == 0) {
-                org.junit.Assert.fail("Query did not return any records.");
-            }
-        } catch (com.athena.framework.server.exception.repository.SpartanPersistenceException e) {
-            org.junit.Assert.fail(e.getMessage());
-        } catch (Exception e) {
-            org.junit.Assert.fail(e.getMessage());
-        }
-    }
-
-    @Test
-    public void test3findBycountryId() {
-        try {
-            java.util.List<Address> listofcountryId = addressRepository.findByCountryId((java.lang.String) map.get("CountryPrimaryKey"));
-            if (listofcountryId.size() == 0) {
-                org.junit.Assert.fail("Query did not return any records.");
-            }
-        } catch (com.athena.framework.server.exception.repository.SpartanPersistenceException e) {
-            org.junit.Assert.fail(e.getMessage());
-        } catch (Exception e) {
-            org.junit.Assert.fail(e.getMessage());
-        }
-    }
-
-    @Test
-    public void test3findBystateId() {
-        try {
-            java.util.List<Address> listofstateId = addressRepository.findByStateId((java.lang.String) map.get("StatePrimaryKey"));
-            if (listofstateId.size() == 0) {
-                org.junit.Assert.fail("Query did not return any records.");
-            }
+            org.junit.Assert.assertNotNull(map.get("TestOOOPrimaryKey"));
+            testoooRepository.findById((java.lang.String) map.get("TestOOOPrimaryKey"));
         } catch (com.athena.framework.server.exception.repository.SpartanPersistenceException e) {
             org.junit.Assert.fail(e.getMessage());
         } catch (Exception e) {
@@ -285,7 +236,8 @@ public class AddressTestCase {
     @Test
     public void test4Delete() {
         try {
-            org.junit.Assert.assertNotNull(map.get("AddressPrimaryKey"));
+            org.junit.Assert.assertNotNull(map.get("TestOOOPrimaryKey"));
+            testoooRepository.delete((java.lang.String) map.get("TestOOOPrimaryKey")); /* Deleting refrenced data */
             addressRepository.delete((java.lang.String) map.get("AddressPrimaryKey")); /* Deleting refrenced data */
             cityRepository.delete((java.lang.String) map.get("CityPrimaryKey")); /* Deleting refrenced data */
             stateRepository.delete((java.lang.String) map.get("StatePrimaryKey")); /* Deleting refrenced data */

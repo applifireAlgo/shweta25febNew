@@ -6,8 +6,8 @@ import com.athena.framework.server.exception.repository.SpartanPersistenceExcept
 import java.util.List;
 import com.athena.framework.server.exception.biz.SpartanConstraintViolationException;
 
-@SourceCodeAuthorClass(createdBy = "nayan.chaudhari@algorhythm.co.in", updatedBy = "nayan.chaudhari@algorhythm.co.in", versionNumber = "2", comments = "Repository for Address Transaction table", complexity = Complexity.MEDIUM)
-public interface AddressRepository<T> extends SearchInterface {
+@SourceCodeAuthorClass(createdBy = "nayan.chaudhari@algorhythm.co.in", updatedBy = "", versionNumber = "1", comments = "Repository for TestOOO Transaction table", complexity = Complexity.MEDIUM)
+public interface TestOOORepository<T> extends SearchInterface {
 
     public List<T> findAll() throws SpartanPersistenceException;
 
@@ -21,13 +21,7 @@ public interface AddressRepository<T> extends SearchInterface {
 
     public void update(List<T> entity) throws SpartanPersistenceException, SpartanConstraintViolationException;
 
-    public List<T> findByAddressTypeId(String addressTypeId) throws Exception, SpartanPersistenceException;
+    public List<T> findByAddd(String addd) throws Exception, SpartanPersistenceException;
 
-    public List<T> findByCountryId(String countryId) throws Exception, SpartanPersistenceException;
-
-    public List<T> findByStateId(String stateId) throws Exception, SpartanPersistenceException;
-
-    public List<T> findByCityId(String cityId) throws Exception, SpartanPersistenceException;
-
-    public T findById(String addressId) throws Exception, SpartanPersistenceException;
+    public T findById(String ada) throws Exception, SpartanPersistenceException;
 }

@@ -18,6 +18,7 @@
  25 src/main/java/com/app/server/repository/CurrentMonthRepository.java
  25 src/main/java/com/app/server/repository/GenderRepository.java
  25 src/main/java/com/app/server/repository/LanguageRepository.java
+ 25 src/main/java/com/app/server/repository/NewEntityRepository.java
  25 src/main/java/com/app/server/repository/QuestionRepository.java
  25 src/main/java/com/app/server/repository/SalesRegionRepository.java
  25 src/main/java/com/app/server/repository/TimezoneRepository.java
@@ -32,6 +33,7 @@
  27 src/main/java/com/app/server/repository/PasswordPolicyRepository.java
  27 src/main/java/com/app/server/repository/RetailerRepository.java
  27 src/main/java/com/app/server/repository/StateRepository.java
+ 27 src/main/java/com/app/server/repository/TestOOORepository.java
  28 src/main/java/com/app/server/repository/RolesRepository.java
  29 src/main/java/com/app/server/repository/CityRepository.java
  29 src/main/java/com/app/server/repository/UserAccessRepository.java
@@ -46,6 +48,7 @@
  42 src/main/java/com/app/server/service/CurrentMonthService.java
  42 src/main/java/com/app/server/service/GenderService.java
  42 src/main/java/com/app/server/service/LanguageService.java
+ 42 src/main/java/com/app/server/service/NewEntityService.java
  42 src/main/java/com/app/server/service/QuestionService.java
  42 src/main/java/com/app/server/service/RolesService.java
  42 src/main/java/com/app/server/service/SalesRegionService.java
@@ -59,6 +62,7 @@
  46 src/main/java/com/app/server/service/DistributorService.java
  46 src/main/java/com/app/server/service/MaterialService.java
  46 src/main/java/com/app/server/service/RetailerService.java
+ 46 src/main/java/com/app/server/service/TestOOOService.java
  47 src/main/java/com/app/server/service/AddressTypeService.java
  47 src/main/java/com/app/server/service/AppMenusService.java
  47 src/main/java/com/app/server/service/CommunicationGroupService.java
@@ -98,12 +102,14 @@
  121 src/main/java/com/app/server/repository/CategoryRepositoryImpl.java
  121 src/main/java/com/app/server/repository/ChannelRepositoryImpl.java
  121 src/main/java/com/app/server/repository/CurrentMonthRepositoryImpl.java
+ 121 src/main/java/com/app/server/repository/NewEntityRepositoryImpl.java
  121 src/main/java/com/app/server/repository/SalesRegionRepositoryImpl.java
  132 src/main/java/com/app/server/repository/SessionDataRepositoryImpl.java
  134 src/main/java/com/app/server/repository/BrandRepositoryImpl.java
  134 src/main/java/com/app/server/repository/DistributorRepositoryImpl.java
  134 src/main/java/com/app/server/repository/MaterialRepositoryImpl.java
  134 src/main/java/com/app/server/repository/RetailerRepositoryImpl.java
+ 134 src/main/java/com/app/server/repository/TestOOORepositoryImpl.java
  136 src/main/java/com/app/server/repository/RolesRepositoryImpl.java
  139 src/main/java/com/app/server/bean/ProjectBean.java
  143 src/main/java/com/app/server/repository/CityRepositoryImpl.java
@@ -114,6 +120,7 @@
  148 src/main/java/com/app/server/service/CurrentMonthServiceImpl.java
  148 src/main/java/com/app/server/service/GenderServiceImpl.java
  148 src/main/java/com/app/server/service/LanguageServiceImpl.java
+ 148 src/main/java/com/app/server/service/NewEntityServiceImpl.java
  148 src/main/java/com/app/server/service/QuestionServiceImpl.java
  148 src/main/java/com/app/server/service/SalesRegionServiceImpl.java
  148 src/main/java/com/app/server/service/TitleServiceImpl.java
@@ -125,6 +132,7 @@
  152 src/test/java/com/app/server/service/ChannelTestCase.java
  152 src/test/java/com/app/server/service/CurrentMonthTestCase.java
  152 src/test/java/com/app/server/service/GenderTestCase.java
+ 152 src/test/java/com/app/server/service/NewEntityTestCase.java
  152 src/test/java/com/app/server/service/SalesRegionTestCase.java
  152 src/test/java/com/app/server/service/TitleTestCase.java
  153 src/main/java/com/app/server/service/ArtPasswordPolicyServiceImpl.java
@@ -140,6 +148,7 @@
  164 src/main/java/com/app/server/service/DistributorServiceImpl.java
  164 src/main/java/com/app/server/service/MaterialServiceImpl.java
  164 src/main/java/com/app/server/service/RetailerServiceImpl.java
+ 164 src/main/java/com/app/server/service/TestOOOServiceImpl.java
  166 src/test/java/com/app/server/service/LanguageTestCase.java
  167 src/main/java/com/app/server/service/AddressTypeServiceImpl.java
  167 src/main/java/com/app/server/service/AppMenusServiceImpl.java
@@ -187,7 +196,9 @@
  233 src/test/java/com/app/server/service/CityTestCase.java
  241 src/main/java/com/app/server/repository/LoginRepositoryImpl.java
  243 src/main/java/com/app/server/repository/AddressRepositoryImpl.java
+ 252 src/test/java/com/app/server/service/TestOOOTestCase.java
  262 src/main/java/com/app/shared/authentication/ArtPasswordPolicy.java
+ 264 src/main/java/com/app/shared/defaultdomain/NewEntity.java
  264 src/main/java/com/app/shared/sales/SalesRegion.java
  265 src/main/java/com/app/shared/sales/Category.java
  265 src/main/java/com/app/shared/sales/Channel.java
@@ -200,6 +211,7 @@
  277 src/main/java/com/app/shared/sales/Brand.java
  277 src/main/java/com/app/shared/sales/Retailer.java
  279 src/main/java/com/app/shared/contacts/CommunicationGroup.java
+ 281 src/main/java/com/app/shared/defaultdomain/TestOOO.java
  287 src/test/java/com/app/server/service/UserAccessTestCase.java
  289 src/main/java/com/app/shared/contacts/CommunicationData.java
  290 src/test/java/com/app/server/service/UserRoleBridgeTestCase.java
@@ -235,4 +247,4 @@
  487 src/test/java/com/app/server/service/LoginTestCase.java
  555 src/main/java/com/app/shared/authentication/User.java
  648 src/main/java/com/app/shared/contacts/CoreContacts.java
- 36570 total
+ 38226 total

@@ -4,8 +4,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import com.athena.annotation.Complexity;
 import com.athena.annotation.SourceCodeAuthorClass;
-import com.app.server.repository.AddressRepository;
-import com.app.shared.location.Address;
+import com.app.server.repository.TestOOORepository;
+import com.app.shared.defaultdomain.TestOOO;
 import com.athena.framework.server.helper.RuntimeLogInfoHelper;
 import com.spartan.sprinkler.core.Sprinkler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +20,13 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.PathVariable;
-import java.util.Map;
 import com.athena.framework.server.bean.FindByBean;
 
 @RestController
 @Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
-@SourceCodeAuthorClass(createdBy = "nayan.chaudhari@algorhythm.co.in", updatedBy = "nayan.chaudhari@algorhythm.co.in", versionNumber = "2", comments = "Service for Address Transaction table", complexity = Complexity.MEDIUM)
-@RequestMapping("/Address")
-public class AddressServiceImpl extends AddressService {
+@SourceCodeAuthorClass(createdBy = "nayan.chaudhari@algorhythm.co.in", updatedBy = "", versionNumber = "1", comments = "Service for TestOOO Transaction table", complexity = Complexity.MEDIUM)
+@RequestMapping("/TestOOO")
+public class TestOOOServiceImpl extends TestOOOService {
 
     @Autowired
     private RuntimeLogInfoHelper runtimeLogInfoHelper;
@@ -36,27 +35,27 @@ public class AddressServiceImpl extends AddressService {
     private Sprinkler sprinkler;
 
     @Autowired
-    private AddressRepository<Address> addressrepo;
+    private TestOOORepository<TestOOO> testOOOrepo;
 
     @RequestMapping(value = "/findAll", consumes = "application/json", method = RequestMethod.GET)
     @Override
     public HttpEntity<ResponseBean> findAll() throws SpartanPersistenceException, Exception {
         ResponseBean responseBean = new ResponseBean();
         org.springframework.http.HttpStatus httpStatus = org.springframework.http.HttpStatus.OK;
-        java.util.List<com.app.shared.location.Address> lstaddress = addressrepo.findAll();
+        java.util.List<com.app.shared.defaultdomain.TestOOO> lsttestooo = testOOOrepo.findAll();
         responseBean.add("success", true);
         responseBean.add("message", "Successfully retrived ");
-        responseBean.add("data", lstaddress);
+        responseBean.add("data", lsttestooo);
         return new org.springframework.http.ResponseEntity<ResponseBean>(responseBean, httpStatus);
     }
 
     @RequestMapping(consumes = "application/json", method = RequestMethod.POST)
     @Override
-    public HttpEntity<ResponseBean> save(@RequestBody Address entity) throws SpartanPersistenceException, SpartanTransactionException, Exception {
+    public HttpEntity<ResponseBean> save(@RequestBody TestOOO entity) throws SpartanPersistenceException, SpartanTransactionException, Exception {
         ResponseBean responseBean = new ResponseBean();
         org.springframework.http.HttpStatus httpStatus = org.springframework.http.HttpStatus.CREATED;
         try {
-            addressrepo.save(entity);
+            testOOOrepo.save(entity);
             responseBean.add("success", true);
             responseBean.add("message", "Successfully Created");
             responseBean.add("data", entity);
@@ -69,11 +68,11 @@ public class AddressServiceImpl extends AddressService {
 
     @RequestMapping(consumes = "application/json", headers = { "isArray" }, method = RequestMethod.POST)
     @Override
-    public HttpEntity<ResponseBean> save(@RequestBody List<Address> entity, @RequestHeader("isArray") boolean request) throws SpartanPersistenceException, SpartanTransactionException, Exception {
+    public HttpEntity<ResponseBean> save(@RequestBody List<TestOOO> entity, @RequestHeader("isArray") boolean request) throws SpartanPersistenceException, SpartanTransactionException, Exception {
         ResponseBean responseBean = new ResponseBean();
         org.springframework.http.HttpStatus httpStatus = org.springframework.http.HttpStatus.CREATED;
         try {
-            addressrepo.save(entity);
+            testOOOrepo.save(entity);
             responseBean.add("success", true);
             responseBean.add("message", "Successfully Created");
             httpStatus = org.springframework.http.HttpStatus.CREATED;
@@ -89,7 +88,7 @@ public class AddressServiceImpl extends AddressService {
         ResponseBean responseBean = new ResponseBean();
         org.springframework.http.HttpStatus httpStatus = org.springframework.http.HttpStatus.OK;
         try {
-            addressrepo.delete(entity);
+            testOOOrepo.delete(entity);
             httpStatus = org.springframework.http.HttpStatus.OK;
             responseBean.add("success", true);
             responseBean.add("message", "Successfully deleted ");
@@ -101,11 +100,11 @@ public class AddressServiceImpl extends AddressService {
 
     @RequestMapping(consumes = "application/json", method = RequestMethod.PUT)
     @Override
-    public HttpEntity<ResponseBean> update(@RequestBody Address entity) throws SpartanPersistenceException, SpartanTransactionException, Exception {
+    public HttpEntity<ResponseBean> update(@RequestBody TestOOO entity) throws SpartanPersistenceException, SpartanTransactionException, Exception {
         ResponseBean responseBean = new ResponseBean();
         org.springframework.http.HttpStatus httpStatus = org.springframework.http.HttpStatus.OK;
         try {
-            addressrepo.update(entity);
+            testOOOrepo.update(entity);
             responseBean.add("success", true);
             responseBean.add("message", "Successfully updated ");
             responseBean.add("data", entity._getPrimarykey().toString());
@@ -117,11 +116,11 @@ public class AddressServiceImpl extends AddressService {
 
     @RequestMapping(consumes = "application/json", headers = { "isArray" }, method = RequestMethod.PUT)
     @Override
-    public HttpEntity<ResponseBean> update(@RequestBody List<Address> entity, @RequestHeader("isArray") boolean request) throws SpartanPersistenceException, SpartanTransactionException, Exception {
+    public HttpEntity<ResponseBean> update(@RequestBody List<TestOOO> entity, @RequestHeader("isArray") boolean request) throws SpartanPersistenceException, SpartanTransactionException, Exception {
         ResponseBean responseBean = new ResponseBean();
         org.springframework.http.HttpStatus httpStatus = org.springframework.http.HttpStatus.OK;
         try {
-            addressrepo.update(entity);
+            testOOOrepo.update(entity);
             responseBean.add("success", true);
             responseBean.add("message", "Successfully updated entities");
             httpStatus = org.springframework.http.HttpStatus.OK;
@@ -131,82 +130,16 @@ public class AddressServiceImpl extends AddressService {
         return new org.springframework.http.ResponseEntity<ResponseBean>(responseBean, httpStatus);
     }
 
-    @RequestMapping(value = "/search", consumes = "application/json", method = RequestMethod.POST)
+    @RequestMapping(value = "/findByAddd", method = RequestMethod.POST)
     @Override
-    public HttpEntity<ResponseBean> search(@RequestBody Map<String, Object> fieldData) throws SpartanPersistenceException, Exception {
-        ResponseBean responseBean = new ResponseBean();
-        org.springframework.http.HttpStatus httpStatus = org.springframework.http.HttpStatus.OK;
-        List<java.lang.Object> lstaddress = addressrepo.search("Address.DefaultFinders", fieldData, getFieldMetaData());
-        responseBean.add("success", true);
-        responseBean.add("message", "Successfully retrived ");
-        responseBean.add("data", lstaddress);
-        return new org.springframework.http.ResponseEntity<ResponseBean>(responseBean, httpStatus);
-    }
-
-    private Map<String, String> getFieldMetaData() {
-        java.util.Map<java.lang.String, java.lang.String> fieldMetaData = new java.util.HashMap<java.lang.String, java.lang.String>();
-        fieldMetaData.put("addressTypeId", "String");
-        return fieldMetaData;
-    }
-
-    @RequestMapping(value = "/findByAddressTypeId", method = RequestMethod.POST)
-    @Override
-    public HttpEntity<ResponseBean> findByAddressTypeId(@RequestBody FindByBean findByBean) throws SpartanPersistenceException, Exception {
+    public HttpEntity<ResponseBean> findByAddd(@RequestBody FindByBean findByBean) throws SpartanPersistenceException, Exception {
         com.athena.framework.server.bean.ResponseBean responseBean = new ResponseBean();
         org.springframework.http.HttpStatus httpStatus = org.springframework.http.HttpStatus.OK;
         try {
-            List<com.app.shared.location.Address> lstaddress = addressrepo.findByAddressTypeId((java.lang.String) findByBean.getFindKey());
+            List<com.app.shared.defaultdomain.TestOOO> lsttestooo = testOOOrepo.findByAddd((java.lang.String) findByBean.getFindKey());
             responseBean.add("success", true);
             responseBean.add("message", "Successfully retrived ");
-            responseBean.add("data", lstaddress);
-        } catch (org.springframework.transaction.TransactionException e) {
-            throw new com.athena.framework.server.exception.repository.SpartanTransactionException("can not find ID", e.getRootCause());
-        }
-        return new org.springframework.http.ResponseEntity<ResponseBean>(responseBean, httpStatus);
-    }
-
-    @RequestMapping(value = "/findByCountryId", method = RequestMethod.POST)
-    @Override
-    public HttpEntity<ResponseBean> findByCountryId(@RequestBody FindByBean findByBean) throws SpartanPersistenceException, Exception {
-        com.athena.framework.server.bean.ResponseBean responseBean = new ResponseBean();
-        org.springframework.http.HttpStatus httpStatus = org.springframework.http.HttpStatus.OK;
-        try {
-            List<com.app.shared.location.Address> lstaddress = addressrepo.findByCountryId((java.lang.String) findByBean.getFindKey());
-            responseBean.add("success", true);
-            responseBean.add("message", "Successfully retrived ");
-            responseBean.add("data", lstaddress);
-        } catch (org.springframework.transaction.TransactionException e) {
-            throw new com.athena.framework.server.exception.repository.SpartanTransactionException("can not find ID", e.getRootCause());
-        }
-        return new org.springframework.http.ResponseEntity<ResponseBean>(responseBean, httpStatus);
-    }
-
-    @RequestMapping(value = "/findByStateId", method = RequestMethod.POST)
-    @Override
-    public HttpEntity<ResponseBean> findByStateId(@RequestBody FindByBean findByBean) throws SpartanPersistenceException, Exception {
-        com.athena.framework.server.bean.ResponseBean responseBean = new ResponseBean();
-        org.springframework.http.HttpStatus httpStatus = org.springframework.http.HttpStatus.OK;
-        try {
-            List<com.app.shared.location.Address> lstaddress = addressrepo.findByStateId((java.lang.String) findByBean.getFindKey());
-            responseBean.add("success", true);
-            responseBean.add("message", "Successfully retrived ");
-            responseBean.add("data", lstaddress);
-        } catch (org.springframework.transaction.TransactionException e) {
-            throw new com.athena.framework.server.exception.repository.SpartanTransactionException("can not find ID", e.getRootCause());
-        }
-        return new org.springframework.http.ResponseEntity<ResponseBean>(responseBean, httpStatus);
-    }
-
-    @RequestMapping(value = "/findByCityId", method = RequestMethod.POST)
-    @Override
-    public HttpEntity<ResponseBean> findByCityId(@RequestBody FindByBean findByBean) throws SpartanPersistenceException, Exception {
-        com.athena.framework.server.bean.ResponseBean responseBean = new ResponseBean();
-        org.springframework.http.HttpStatus httpStatus = org.springframework.http.HttpStatus.OK;
-        try {
-            List<com.app.shared.location.Address> lstaddress = addressrepo.findByCityId((java.lang.String) findByBean.getFindKey());
-            responseBean.add("success", true);
-            responseBean.add("message", "Successfully retrived ");
-            responseBean.add("data", lstaddress);
+            responseBean.add("data", lsttestooo);
         } catch (org.springframework.transaction.TransactionException e) {
             throw new com.athena.framework.server.exception.repository.SpartanTransactionException("can not find ID", e.getRootCause());
         }
@@ -219,10 +152,10 @@ public class AddressServiceImpl extends AddressService {
         com.athena.framework.server.bean.ResponseBean responseBean = new ResponseBean();
         org.springframework.http.HttpStatus httpStatus = org.springframework.http.HttpStatus.OK;
         try {
-            com.app.shared.location.Address lstaddress = addressrepo.findById((java.lang.String) findByBean.getFindKey());
+            com.app.shared.defaultdomain.TestOOO lsttestooo = testOOOrepo.findById((java.lang.String) findByBean.getFindKey());
             responseBean.add("success", true);
             responseBean.add("message", "Successfully retrived ");
-            responseBean.add("data", lstaddress);
+            responseBean.add("data", lsttestooo);
         } catch (org.springframework.transaction.TransactionException e) {
             throw new com.athena.framework.server.exception.repository.SpartanTransactionException("can not find ID", e.getRootCause());
         }

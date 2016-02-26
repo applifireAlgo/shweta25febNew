@@ -1,0 +1,30 @@
+Ext.define('Testpro.testpro.shared.com.model.defaultcontext.defaultdomain.TestOOOModel', {
+     "extend": "Ext.data.Model",
+     "fields": [{
+          "name": "primaryKey",
+          "type": "string",
+          "defaultValue": ""
+     }, {
+          "name": "ada",
+          "type": "string",
+          "defaultValue": ""
+     }, {
+          "name": "dsds",
+          "type": "string",
+          "defaultValue": ""
+     }, {
+          "name": "versionId",
+          "type": "int",
+          "defaultValue": ""
+     }, {
+          "name": "Address",
+          "reference": "AddressModel"
+     }, {
+          "name": "entityAudit",
+          "reference": "EntityAudit"
+     }, {
+          "name": "primaryDisplay",
+          "type": "string",
+          "defaultValue": ""
+     }]
+});
