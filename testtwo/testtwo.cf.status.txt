@@ -1,0 +1,14 @@
+ExitCode=0
+TotalTimeTaken=8.352
+TotalFiles=9475
+TotalFolders=4577
+TotalJavaFiles=27
+TotalJsFiles=208
+TotalJsonFiles=88
+TotalCssFiles=669
+TotalXmlFiles=280
+TotalPropertiesFiles=77
+Fri Feb 26 10:38:38 UTC 2016 : Code Factory Process Started for instructions testtwo.cf
+Fri Feb 26 10:38:58 UTC 2016 : Code Factory : Total Files created : 9475 | Total Time Taken : 8.352 in seconds
+Fri Feb 26 10:38:57 UTC 2016 : Code Factory : Process Completed Blue Print instructions
+Fri Feb 26 10:38:58 UTC 2016 : Code Factory : Exited with the code 0
